@@ -4,13 +4,13 @@ __docformat__ = 'epytext'
 
 from django.db import models
 
-from publications.models.orderedmodel import OrderedModel
+from article.models.orderedmodel import OrderedModel
 
 
 class Type(OrderedModel):
     class Meta:
         ordering = ('order',)
-        app_label = 'publications'
+        app_label = 'article'
         verbose_name_plural = '  Types'
 
     type = models.CharField(max_length=128)

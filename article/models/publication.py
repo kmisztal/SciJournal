@@ -10,8 +10,8 @@ from django.db import models
 from django.utils.http import urlquote_plus
 from django.conf import settings
 
-from publications.fields import PagesField
-from publications.models import Type, List
+from article.fields import PagesField
+from article.models import Type, List
 
 if 'django.contrib.sites' in settings.INSTALLED_APPS:
     from django.contrib.sites.models import Site
@@ -23,7 +23,7 @@ class Publication(models.Model):
     """
 
     class Meta:
-        app_label = 'publications'
+        app_label = 'article'
         ordering = ['-year', '-month', '-id']
         verbose_name_plural = ' Publications'
 
@@ -81,9 +81,9 @@ class Publication(models.Model):
                           help_text='Link to PDF or journal page.')
     code = models.URLField(blank=True,
                            help_text='Link to page with code.')
-    pdf = models.FileField(upload_to='publications/', verbose_name='PDF', blank=True, null=True)
-    image = models.ImageField(upload_to='publications/images/', blank=True, null=True)
-    thumbnail = models.ImageField(upload_to='publications/thumbnails/', blank=True, null=True)
+    pdf = models.FileField(upload_to='article/', verbose_name='PDF', blank=True, null=True)
+    image = models.ImageField(upload_to='article/images/', blank=True, null=True)
+    thumbnail = models.ImageField(upload_to='article/thumbnails/', blank=True, null=True)
     doi = models.CharField(max_length=128, verbose_name='DOI', blank=True)
     external = models.BooleanField(default=False,
                                    help_text='If publication was written in another lab, mark as external.')

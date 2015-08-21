@@ -6,8 +6,8 @@ from django.http import Http404
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
-from publications.models import List
-from publications.utils import populate
+from article.models import List
+from article.utils import populate
 
 
 def list(request, list):

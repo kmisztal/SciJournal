@@ -4,7 +4,7 @@ __docformat__ = 'epytext'
 
 from django.contrib import admin
 
-from publications.models import Type, List, Publication
+from article.models import Type, List, Publication
 from .publicationadmin import PublicationAdmin
 from .typeadmin import TypeAdmin
 from .listadmin import ListAdmin

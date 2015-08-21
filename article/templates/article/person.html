@@ -3,7 +3,7 @@
 {% block head %}
     {{ block.super }}
     <link rel="alternate" type="application/rss+xml" title="RSS" href="?rss"/>
-    <link rel="unapi-server" type="application/xml" title="unAPI" href="{% url 'publications.views.unapi' %}"/>
+    <link rel="unapi-server" type="application/xml" title="unAPI" href="{% url 'article.views.unapi' %}"/>
 {% endblock %}
 
 {% block content %}
@@ -19,7 +19,7 @@
             <div{% if not forloop.last %} style="margin-bottom: 30px;"{% endif %}>
                 {% for publication in type.publications %}
                     <div{% if not forloop.last %} style="margin-bottom: 20px;"{% endif %}>
-                        {% include "publications/publication.html" %}
+                        {% include "article/publication.html" %}
                     </div>
                 {% endfor %}
             </div>

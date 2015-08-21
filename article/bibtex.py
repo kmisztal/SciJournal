@@ -7,7 +7,7 @@ __docformat__ = 'epytext'
 __version__ = '1.2.0'
 
 import re
-import publications.six as six
+import article.six as six
 
 # special character mapping
 special_chars = (

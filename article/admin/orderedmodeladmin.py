@@ -103,7 +103,7 @@ class OrderedModelAdmin(admin.ModelAdmin):
         return HttpResponseRedirect('../../%s' % self.request_query_string)
 
     def move_up_down_links(self, obj):
-        return render_to_string("admin/publications/order_controls.html", {
+        return render_to_string("admin/article/order_controls.html", {
             'app_label': self.model._meta.app_label,
             'module_name': self.model._meta.model_name,
             'object_id': obj.id,

@@ -1,4 +1,4 @@
-from publications.models import CustomLink, CustomFile
+from article.models import CustomLink, CustomFile
 
 
 def populate(publications):

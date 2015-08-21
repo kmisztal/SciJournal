@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
-from publications.models import Publication
+from article.models import Publication
 
 
 def unapi(request):

@@ -8,7 +8,7 @@ try:
     from django.conf.urls import patterns, url
 except ImportError:
     from django.conf.urls.defaults import patterns, url
-from publications.models import CustomLink, CustomFile
+from article.models import CustomLink, CustomFile
 
 
 class CustomLinkInline(admin.StackedInline):
@@ -26,7 +26,7 @@ class CustomFileInline(admin.StackedInline):
 class PublicationAdmin(admin.ModelAdmin):
     list_display = ('type', 'first_author', 'title', 'type', 'year', 'journal_or_book_title')
     list_display_links = ('title',)
-    change_list_template = 'admin/publications/publication_change_list.html'
+    change_list_template = 'admin/article/publication_change_list.html'
     search_fields = ('title', 'journal', 'authors', 'keywords', 'year')
     fieldsets = (
         (None, {'fields':
@@ -46,6 +46,6 @@ class PublicationAdmin(admin.ModelAdmin):
 
     def get_urls(self):
         return patterns('',
-                        url(r'^import_bibtex/$', 'publications.admin_views.import_bibtex',
-                            name='publications_publication_import_bibtex'),
+                        url(r'^import_bibtex/$', 'article.admin_views.import_bibtex',
+                            name='article_publication_import_bibtex'),
                         ) + super(PublicationAdmin, self).get_urls()

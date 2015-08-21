@@ -7,13 +7,13 @@
                         <a href="{{ publication.code }}"><img src="{{ MEDIA_URL }}{{ publication.thumbnail }}"
                                                               style="width: 100px; height: 100px;"/></a>
                     {% else %}
-                        <a href="{% url 'publications.views.id' publication.pk %}"><img
+                        <a href="{% url 'article.views.id' publication.pk %}"><img
                                 src="{{ MEDIA_URL }}{{ publication.thumbnail }}" style="width: 100px; height: 100px;"/></a>
                     {% endif %}
                 {% endif %}
             </td>
             <td{% if not forloop.last %} style="padding-bottom: 20px; vertical-align: top;"{% endif %}>
-                {% include "publications/publication.html" %}
+                {% include "article/publication.html" %}
             </td>
         </tr>
     {% endfor %}

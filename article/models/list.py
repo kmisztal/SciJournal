@@ -11,7 +11,7 @@ class List(models.Model):
     """
 
     class Meta:
-        app_label = 'publications'
+        app_label = 'article'
         ordering = ('list',)
         verbose_name_plural = 'Lists'
 

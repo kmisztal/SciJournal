@@ -1,7 +1,7 @@
 [
   {
     "pk": 1,
-    "model": "publications.publication",
+    "model": "article.publication",
     "fields": {
       "month": 1,
       "citekey": "Ecker2014a",
@@ -17,7 +17,7 @@
   },
   {
     "pk": 2,
-    "model": "publications.publication",
+    "model": "article.publication",
     "fields": {
       "number": 190,
       "month": 12,
@@ -34,7 +34,7 @@
   },
   {
     "pk": 3,
-    "model": "publications.publication",
+    "model": "article.publication",
     "fields": {
       "month": 11,
       "citekey": "Theis2011a",
@@ -50,7 +50,7 @@
   },
   {
     "pk": 4,
-    "model": "publications.publication",
+    "model": "article.publication",
     "fields": {
       "number": 40,
       "month": 9,
@@ -70,7 +70,7 @@
   },
   {
     "pk": 5,
-    "model": "publications.publication",
+    "model": "article.publication",
     "fields": {
       "citekey": "Gerhard2014a",
       "year": 2014,

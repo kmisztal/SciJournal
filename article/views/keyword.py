@@ -5,8 +5,8 @@ __docformat__ = 'epytext'
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
-from publications.models import Publication
-from publications.utils import populate
+from article.models import Publication
+from article.utils import populate
 
 
 def keyword(request, keyword):

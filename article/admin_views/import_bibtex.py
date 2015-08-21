@@ -10,9 +10,9 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 
-import publications.six as six
-from publications.bibtex import parse
-from publications.models import Publication, Type
+import article.six as six
+from article.bibtex import parse
+from article.models import Publication, Type
 
 
 # mapping of months
@@ -138,7 +138,7 @@ def import_bibtex(request):
         if errors:
             # some error occurred
             return render_to_response(
-                'admin/publications/import_bibtex.html', {
+                'admin/article/import_bibtex.html', {
                     'errors': errors,
                     'title': 'Import BibTex',
                     'types': Type.objects.all(),

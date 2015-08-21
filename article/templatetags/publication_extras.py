@@ -9,8 +9,8 @@ from django.template.loader import get_template
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
 
-from publications.models import Publication, List, Type
-from publications.utils import populate
+from article.models import Publication, List, Type
+from article.utils import populate
 
 register = Library()
 

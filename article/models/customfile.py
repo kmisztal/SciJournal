@@ -4,16 +4,16 @@ __docformat__ = 'epytext'
 
 from django.db import models
 
-from publications.models import Publication
+from article.models import Publication
 
 
 class CustomFile(models.Model):
     class Meta:
-        app_label = 'publications'
+        app_label = 'article'
 
     publication = models.ForeignKey(Publication)
     description = models.CharField(max_length=256)
-    file = models.FileField(upload_to='publications/')
+    file = models.FileField(upload_to='article/')
 
     def __unicode__(self):
         return self.description

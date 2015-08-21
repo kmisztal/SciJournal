@@ -11,8 +11,8 @@ from django.shortcuts import render_to_response
 
 from django.template import RequestContext
 
-from publications.models import Type, Publication
-from publications.utils import populate
+from article.models import Type, Publication
+from article.utils import populate
 
 
 def person(request, name):
