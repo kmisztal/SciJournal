@@ -1,0 +1,23 @@
+{% load i18n %}
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}SciJournal{% endblock %}</title>
+    {% block head_include %}{% endblock %}
+</head>
+
+<body>
+{% block header %}{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+<!-- Footer -->
+{% block footer %}
+{% endblock %}
+
+</body>
+
+</html>
