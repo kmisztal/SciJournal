@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^publications/', include('publications.urls')),
+    url(r'^article/', include('article.urls')),
 ]
