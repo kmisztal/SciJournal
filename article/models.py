@@ -1,5 +1,13 @@
 from django.db import models
 
+#TODO
+# classes:
+# article versions (date, files, comment)
+# review (reviewer, coment)
+# held in Publication as many to many
+# add states (Assan)
+# add to admin page
+
 class Publication(models.Model):
     """
     Model representing a publication.
