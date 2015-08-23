@@ -1,12 +1,29 @@
 from django.db import models
+from django_fsm import FSMField, transition
+from publications.fields import PagesField
 
 #TODO
 # classes:
 # article versions (date, files, comment)
-# review (reviewer, coment)
-# held in Publication as many to many
+# review (reviewer, comment)
+# held in Publication as many to many (not FK to Publication?) !!!
 # add states (Assan)
 # add to admin page
+
+
+class ArticleVersion:
+    date = models.DateField()
+    comment = models.CharField(max_length=255) 
+
+
+class ArticleFile(file):
+    article = models.ForeignKey("ArticleVersion")
+
+
+class Review:
+    reviewer_name = models.CharField(max_length=255) #should it be FK to Reviewer?
+    comment = models.CharField(max_length=255)
+
 
 class Publication(models.Model):
     """
@@ -42,7 +59,7 @@ class Publication(models.Model):
     month = models.IntegerField(choices=MONTH_CHOICES, blank=True, null=True)
     volume = models.IntegerField(blank=True, null=True)
     number = models.IntegerField(blank=True, null=True, verbose_name='Issue number')
-    pages = PagesField(max_length=32, blank=True)
+    pages = PagesField(max_length=32, blank=True) #here sth wrong, needs pages field
     note = models.CharField(max_length=256, blank=True)
     keywords = models.CharField(max_length=256, blank=True,
                                 help_text='List of keywords separated by commas.')
@@ -50,5 +67,5 @@ class Publication(models.Model):
                           help_text='Link to PDF or journal page.')
     #pdf = models.FileField(upload_to='publications/', verbose_name='PDF', blank=True, null=True)
     doi = models.CharField(max_length=128, verbose_name='DOI', blank=True)
-                                   help_text='If publication was written in another lab, mark as external.')
     abstract = models.TextField(blank=True)
+    state = FSMField(default='new') #???
